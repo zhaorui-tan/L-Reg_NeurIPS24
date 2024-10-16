@@ -30,3 +30,18 @@ loss += L_Reg * weight
 # Done! Feel free to have a try :P
 ```
 
+Someone may be interested in the solution of limitations of L-Reg, I offer the Ortho-Reg code here as well:
+
+```python
+weight = weight_of_ortho_reg
+
+# the calculation begins here
+feat_ = feat / feat.norm(dim=-1, keepdim=True) # normalize at the first
+B = feat_.T @ feat_
+id_matrix = torch.eye(*B.size(), out=torch.empty_like(B)).cuda() * 1.
+ortho_reg = nn.MSELoss()(id_matrix, B)
+
+# add it back to other losses, especially for L-Reg
+loss += ortho_reg * weight
+# Done! 
+```
