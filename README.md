@@ -1,5 +1,9 @@
 # L-Reg_NeurIPS24
 Official Code of **Interpret Your Decision: Logical Reasoning Regularization for Generalization in Visual Classification (NeurIPS 2024 Spotlight)**
+The preprint version of the paper is available at: https://arxiv.org/abs/2410.04492
+
+
+
 
 As many friends requested, I post the L-Reg here:
 
