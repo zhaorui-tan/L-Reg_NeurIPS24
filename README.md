@@ -13,7 +13,8 @@ As many friends requested, I post the L-Reg here:
 loss = other_mainly_used_loss_for_this_task
 weight = weight_of_L_Reg
 
-# feat is the logit output of a layer from the model. 
+# feat is the output of the encoder.
+# logit is the prediction results of the classifier without softmax.  
 # as we show in the paper, if the dimensions of logit are independent of each other, it will be better. 
 A = torch.matmul(logit.permute(1, 0), feat)
 
